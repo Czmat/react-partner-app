@@ -1,6 +1,6 @@
 .box {
   border: solid 1px black;
-  background-color: pink;
+  /* background-color: pink; */
   height: 100px;
   width: 100px;
 }

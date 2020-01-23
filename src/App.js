@@ -4,19 +4,31 @@ import './App.css';
 
 function App() {
   const defaultNum = 127;
-  const colorValues = [{red: defaultNum}, {blue: defaultNum}, {green: defaultNum}]
-  const [rangeValue, setRangeValue] = useState({red: defaultNum, green: defaultNum, blue: defaultNum});
+  const colorValues = [
+    { red: defaultNum },
+    { blue: defaultNum },
+    { green: defaultNum },
+  ];
+  const [rangeValue, setRangeValue] = useState({
+    red: defaultNum,
+    green: defaultNum,
+    blue: defaultNum,
+  });
   // const redValue = 0;
   // const blueValue = 0;
   // const greenValue = 0;
 
   function onChange(e) {
-    const change = {}
-    change[e.target.name] = e.target.value
+    const change = {};
+    change[e.target.name] = e.target.value;
     console.log(rangeValue);
-    setRangeValue({...rangeValue, ...change});
+    setRangeValue({ ...rangeValue, ...change });
   }
 
+  const divStyle = {
+    backgroundColor: `rgb(${rangeValue.red}, ${rangeValue.green}, ${rangeValue.blue})`,
+  };
+  console.log(divStyle);
   return (
     <div className="container">
       <div className="form">
@@ -49,15 +61,20 @@ function App() {
           </div>
           <div>
             <label>
-              <input min="0" max="255" className="blue" name="blue" type="range"
-              onChange={e => onChange(e)}
-               />
+              <input
+                min="0"
+                max="255"
+                className="blue"
+                name="blue"
+                type="range"
+                onChange={e => onChange(e)}
+              />
               blue {rangeValue.blue}
             </label>
           </div>
         </form>
       </div>
-      <div className="box"></div>
+      <div className="box" style={divStyle}></div>
     </div>
   );
 }
