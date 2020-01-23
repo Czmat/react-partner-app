@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-//import InputRange from 'react-input-range';
 
 function App() {
   const defaultNum = 127;
