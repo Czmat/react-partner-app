@@ -2,8 +2,13 @@ import React from 'react';
 
 function App() {
   return (
-    <div >
-      Hello Chaise
+    <div>
+      <form>
+        <label>
+        <input className="red" type="range"/>
+        red
+        </label>
+      </form>
     </div>
   );
 }
